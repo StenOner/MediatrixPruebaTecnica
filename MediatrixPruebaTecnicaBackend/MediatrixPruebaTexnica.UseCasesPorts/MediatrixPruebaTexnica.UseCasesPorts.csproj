@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="EmpleadoUseCasesPorts\Empleado\" />
+    <Folder Include="EmpleadoUseCasesPorts\UpdateEmpleadoPorComision\" />
+    <Folder Include="EmpleadoUseCasesPorts\UpdateEmpleadoPorHoras\" />
+    <Folder Include="EmpleadoUseCasesPorts\UpdateEmpleadoAsalariadoPorComision\" />
+    <Folder Include="EmpleadoUseCasesPorts\UpdateEmpleadoAsalariado\" />
+    <Folder Include="RegistroPagoUseCasesPorts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediatrixPruebaTexnica.DTOs\MediatrixPruebaTexnica.DTOs.csproj" />
+  </ItemGroup>
+
+</Project>

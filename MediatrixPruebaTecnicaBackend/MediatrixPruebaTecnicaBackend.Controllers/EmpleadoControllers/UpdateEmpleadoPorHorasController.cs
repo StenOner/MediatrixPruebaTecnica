@@ -1,11 +1,13 @@
 ﻿using MediatrixPruebaTexnica.DTOs.EmpleadoDTOs;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoPorHoras;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class UpdateEmpleadoPorHorasController : ControllerBase
     {
         private readonly IUpdateEmpleadoPorHorasInputPort _inputPort;

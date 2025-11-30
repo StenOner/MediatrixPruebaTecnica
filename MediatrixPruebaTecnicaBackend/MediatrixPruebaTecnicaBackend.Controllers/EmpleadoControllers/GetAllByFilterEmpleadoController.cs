@@ -1,11 +1,13 @@
 ﻿using MediatrixPruebaTexnica.DTOs.EmpleadoDTOs;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.GetAllByFilterEmpleado;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
+    [Authorize]
     public class GetAllByFilterEmpleadoController : ControllerBase
     {
         private readonly IGetAllByFilterEmpleadoInputPort _inputPort;
@@ -14,7 +16,7 @@ namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
         public GetAllByFilterEmpleadoController(IGetAllByFilterEmpleadoInputPort inputPort, IGetAllByFilterEmpleadoOutputPort outputPort)
             => (_inputPort, _outputPort) = (inputPort, outputPort);
 
-        [HttpGet("filter")]
+        [HttpGet("filtro")]
         public async Task<IActionResult> GetAll([FromQuery] EmpleadoFiltroDto dto)
         {
             await _inputPort.Handle(dto);

@@ -1,10 +1,12 @@
 ﻿using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.GetAllEmpleado;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
+    [Authorize]
     public class GetAllEmpleadoController : ControllerBase
     {
         private readonly IGetAllEmpleadoInputPort _inputPort;

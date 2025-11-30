@@ -6,6 +6,7 @@ namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class UpdateEmpleadoAsalariadoPorComisionController : ControllerBase
     {
         private readonly IUpdateEmpleadoAsalariadoPorComisionInputPort _inputPort;

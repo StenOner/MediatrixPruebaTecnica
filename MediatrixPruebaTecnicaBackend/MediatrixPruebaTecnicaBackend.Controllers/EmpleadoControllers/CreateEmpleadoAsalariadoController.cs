@@ -1,11 +1,13 @@
 ﻿using MediatrixPruebaTexnica.DTOs.EmpleadoDTOs;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.CreateEmpleadoAsalariado;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
+    [Authorize(Roles = "Admin")]
     public class CreateEmpleadoAsalariadoController : ControllerBase
     {
         private readonly ICreateEmpleadoAsalariadoInputPort _inputPort;

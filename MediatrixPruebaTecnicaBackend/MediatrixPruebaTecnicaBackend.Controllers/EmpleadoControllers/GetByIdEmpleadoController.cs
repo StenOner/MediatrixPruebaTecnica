@@ -1,10 +1,12 @@
 ﻿using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.GetByIdEmpleado;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
+    [Authorize]
     public class GetByIdEmpleadoController : ControllerBase
     {
         private readonly IGetByIdEmpleadoInputPort _inputPort;

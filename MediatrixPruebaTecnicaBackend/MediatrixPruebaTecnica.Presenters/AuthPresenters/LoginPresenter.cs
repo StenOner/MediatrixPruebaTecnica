@@ -8,9 +8,9 @@ namespace MediatrixPruebaTecnica.Presenters.AuthPresenters
     {
         public Result<LoginResponseDto> Content { get; private set; } = new();
 
-        public Task Handle(Result<LoginResponseDto> response)
+        public Task Handle(Result<LoginResponseDto> content)
         {
-            Content = response;
+            Content = content;
             return Task.CompletedTask;
         }
     }

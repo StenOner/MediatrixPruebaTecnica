@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RegistroPagoPresenters\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MediatrixPruebaTexnica.UseCasesPorts\MediatrixPruebaTexnica.UseCasesPorts.csproj" />
   </ItemGroup>
 

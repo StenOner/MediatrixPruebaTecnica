@@ -4,6 +4,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.DeleteR
 {
     public interface IDeleteRegistroPagoOutputPort
     {
-        Task Handle();
+        Task Handle(Result<bool> dto);
     }
 }

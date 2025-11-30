@@ -4,6 +4,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmple
 {
     public interface IUpdateEmpleadoPorHorasInputPort
     {
-        Task Hanlde(Guid id, UpdateEmpleadoPorHorasDto dto);
+        Task Handle(Guid id, UpdateEmpleadoPorHorasDto dto);
     }
 }

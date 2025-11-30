@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EmpleadoControllers\" />
     <Folder Include="RegistroPagoControllers\" />
   </ItemGroup>
 

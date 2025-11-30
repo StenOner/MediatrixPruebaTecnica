@@ -1,10 +1,10 @@
 ﻿using MediatrixPruebaTexnica.DTOs.EmpleadoDTOs;
 using MediatrixPruebaTexnica.UseCasesPorts.Common;
-using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.GetByIdEmpleado;
+using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoPorComision;
 
 namespace MediatrixPruebaTecnica.Presenters.EmpleadoPresenters
 {
-    public class GetByIdEmpleadoPresenter : IGetByIdEmpleadoOutputPort, IPresenter<Result<EmpleadoDto>>
+    public class UpdateEmpleadoPorComisionPresenter : IUpdateEmpleadoPorComisionOutputPort, IPresenter<Result<EmpleadoDto>>
     {
         public Result<EmpleadoDto> Content { get; private set; } = new();
 

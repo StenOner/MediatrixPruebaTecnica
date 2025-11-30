@@ -20,22 +20,22 @@ namespace MediatrixPruebaTecnica.Gateways.RepositoryEFCore.DataContext.Configura
                 .IsUnique();
 
             // Seed data
-            builder.HasData(
-                new Rol
-                {
-                    Id = Guid.Parse("11111111-1111-1111-1111-111111111111"),
-                    Nombre = "Admin",
-                    Descripcion = "Administrador",
-                    FechaCreacion = DateTime.UtcNow
-                },
-                new Rol
-                {
-                    Id = Guid.Parse("22222222-2222-2222-2222-222222222222"),
-                    Nombre = "User",
-                    Descripcion = "Usuario",
-                    FechaCreacion = DateTime.UtcNow
-                }
-            );
+            //builder.HasData(
+            //    new Rol
+            //    {
+            //        Id = Guid.Parse("11111111-1111-1111-1111-111111111111"),
+            //        Nombre = "Admin",
+            //        Descripcion = "Administrador",
+            //        FechaCreacion = DateTime.UtcNow
+            //    },
+            //    new Rol
+            //    {
+            //        Id = Guid.Parse("22222222-2222-2222-2222-222222222222"),
+            //        Nombre = "User",
+            //        Descripcion = "Usuario",
+            //        FechaCreacion = DateTime.UtcNow
+            //    }
+            //);
         }
     }
 }

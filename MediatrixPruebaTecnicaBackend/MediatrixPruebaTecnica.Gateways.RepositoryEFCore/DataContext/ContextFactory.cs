@@ -10,7 +10,7 @@ namespace MediatrixPruebaTecnica.Gateways.RepositoryEFCore.DataContext
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
 
-            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "MediatrixPruebaTecnicaBackend.Api");
+            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "MediatrixPruebaTecnica.Api");
 
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)

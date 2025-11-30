@@ -1,5 +1,4 @@
-﻿using MediatrixPruebaTecnica.Presenters;
-using MediatrixPruebaTexnica.DTOs.AuthDTOs;
+﻿using MediatrixPruebaTexnica.DTOs.AuthDTOs;
 using MediatrixPruebaTexnica.UseCasesPorts.AuthUseCasesPorts.Login;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,8 +18,7 @@ namespace MediatrixPruebaTecnica.Controllers.AuthControllers
         public async Task<IActionResult> Login(LoginRequestDto dto)
         {
             await _inputPort.Handle(dto);
-            var content = ((IPresenter<LoginResponseDto>)_outputPort).Content;
-            return Ok(content);
+            return Ok(_outputPort);
         }
     }
 }

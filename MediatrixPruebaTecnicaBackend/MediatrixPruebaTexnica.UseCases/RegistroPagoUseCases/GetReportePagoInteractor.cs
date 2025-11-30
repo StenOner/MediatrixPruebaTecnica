@@ -6,7 +6,7 @@ using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.GetReporteP
 
 namespace MediatrixPruebaTexnica.UseCases.RegistroPagoUseCases
 {
-    internal class GetReportePagoInteractor(IRegistroPagoRepository registroPagoRepository, IGetReportePagoOutputPort outputPort, IUnitOfWork unitOfWork)
+    internal class GetReportePagoInteractor(IRegistroPagoRepository registroPagoRepository, IGetReportePagoOutputPort outputPort)
         : IGetReportePagoInputPort
     {
         private readonly IRegistroPagoRepository _registroPagoRepository = registroPagoRepository;

@@ -88,7 +88,7 @@ En `appsettings.json`:
 Desde la carpeta raíz del proyecto, ejecuta:
 
 ```bash
-cd API
+cd MediatrixPruebaTecnicaBackend
 
 # Aplicar las migraciones a la base de datos
 dotnet ef database update -p MediatrixPruebaTecnica.Gateways.RepositoryEFCore -s MediatrixPruebaTecnica.Gateways.RepositoryEFCore

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Enterprise Business Rules", "1. Enterprise Business Rules", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -26,6 +26,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrixPruebaTexnica.UseCases", "MediatrixPruebaTexnica.UseCases\MediatrixPruebaTexnica.UseCases.csproj", "{414EB08B-C5CB-484E-9F3C-122BA9F31630}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrixPruebaTexnica.UseCasesPorts", "MediatrixPruebaTexnica.UseCasesPorts\MediatrixPruebaTexnica.UseCasesPorts.csproj", "{8CD7BB34-59E8-4886-B929-22759D8116C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrixPruebaTecnica.Presenters", "MediatrixPruebaTecnica.Presenters\MediatrixPruebaTecnica.Presenters.csproj", "{D10CB401-5D10-4CC5-B3DA-8FECEBD93456}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrixPruebaTecnica.IoC", "MediatrixPruebaTecnicaBackend.IoC\MediatrixPruebaTecnica.IoC.csproj", "{874E680B-938F-479C-900E-4950678E74F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UIs", "UIs", "{93717F1F-32CE-4128-893C-EA1DE647C3EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrixPruebaTecnica.Api", "MediatrixPruebaTecnicaBackend.Api\MediatrixPruebaTecnica.Api.csproj", "{BDAD985C-BA60-4E75-82A5-6162FCF0E2CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrixPruebaTecnica.Controllers", "MediatrixPruebaTecnicaBackend.Controllers\MediatrixPruebaTecnica.Controllers.csproj", "{ED4CDB67-BBE4-403A-9A46-0457FD8D941D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +63,22 @@ Global
 		{8CD7BB34-59E8-4886-B929-22759D8116C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CD7BB34-59E8-4886-B929-22759D8116C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CD7BB34-59E8-4886-B929-22759D8116C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D10CB401-5D10-4CC5-B3DA-8FECEBD93456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D10CB401-5D10-4CC5-B3DA-8FECEBD93456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D10CB401-5D10-4CC5-B3DA-8FECEBD93456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D10CB401-5D10-4CC5-B3DA-8FECEBD93456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{874E680B-938F-479C-900E-4950678E74F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874E680B-938F-479C-900E-4950678E74F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874E680B-938F-479C-900E-4950678E74F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874E680B-938F-479C-900E-4950678E74F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDAD985C-BA60-4E75-82A5-6162FCF0E2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDAD985C-BA60-4E75-82A5-6162FCF0E2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDAD985C-BA60-4E75-82A5-6162FCF0E2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDAD985C-BA60-4E75-82A5-6162FCF0E2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4CDB67-BBE4-403A-9A46-0457FD8D941D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4CDB67-BBE4-403A-9A46-0457FD8D941D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4CDB67-BBE4-403A-9A46-0457FD8D941D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4CDB67-BBE4-403A-9A46-0457FD8D941D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +92,11 @@ Global
 		{7EA1EAB3-BD94-499A-B0AB-EF2BB4104DBE} = {3D0122DD-A1FD-4B7D-8565-652AC34D2B65}
 		{414EB08B-C5CB-484E-9F3C-122BA9F31630} = {3D0122DD-A1FD-4B7D-8565-652AC34D2B65}
 		{8CD7BB34-59E8-4886-B929-22759D8116C3} = {3D0122DD-A1FD-4B7D-8565-652AC34D2B65}
+		{D10CB401-5D10-4CC5-B3DA-8FECEBD93456} = {858BFC5C-1654-4686-96C7-5568615CFFD7}
+		{874E680B-938F-479C-900E-4950678E74F4} = {8234365E-0F26-4A23-B0EA-0B20F98B3815}
+		{93717F1F-32CE-4128-893C-EA1DE647C3EF} = {6396233B-33CB-40B9-A5C2-7FBFEA6842CE}
+		{BDAD985C-BA60-4E75-82A5-6162FCF0E2CD} = {93717F1F-32CE-4128-893C-EA1DE647C3EF}
+		{ED4CDB67-BBE4-403A-9A46-0457FD8D941D} = {BC78856D-46C5-4E1B-BC35-05983EEA348D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CA431898-EA21-44E8-BAA7-BD16B1E8A9EB}

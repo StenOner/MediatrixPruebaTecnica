@@ -5,6 +5,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.CreateEmple
 {
     public interface ICreateEmpleadoPorComisionOutputPort
     {
-        Task<Result<EmpleadoDto>> Handle(EmpleadoDto dto);
+        Task Handle(EmpleadoDto dto);
     }
 }

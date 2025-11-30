@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediatrixPruebaTecnica.Gateways.RepositoryEFCore\MediatrixPruebaTecnica.Gateways.RepositoryEFCore.csproj" />
+    <ProjectReference Include="..\MediatrixPruebaTecnica.Presenters\MediatrixPruebaTecnica.Presenters.csproj" />
+    <ProjectReference Include="..\MediatrixPruebaTexnica.UseCases\MediatrixPruebaTexnica.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -10,14 +10,14 @@ namespace MediatrixPruebaTecnica.Gateways.RepositoryEFCore.DataContext
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationContext>();
 
-            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "MediatrixPruebaTecnica.WebApi");
+            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "MediatrixPruebaTecnicaBackend.Api");
 
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("MediatrixPruebaTecnica"));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
 
 
             return new ApplicationContext(optionsBuilder.Options);

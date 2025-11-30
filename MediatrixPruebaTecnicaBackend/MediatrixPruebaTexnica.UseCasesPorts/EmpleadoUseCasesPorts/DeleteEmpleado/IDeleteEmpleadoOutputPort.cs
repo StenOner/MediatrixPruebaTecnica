@@ -4,6 +4,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.DeleteEmple
 {
     public interface IDeleteEmpleadoOutputPort
     {
-        Task<Result<bool>> Handle();
+        Task Handle();
     }
 }

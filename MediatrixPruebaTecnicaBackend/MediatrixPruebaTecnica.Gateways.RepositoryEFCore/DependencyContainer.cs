@@ -13,7 +13,7 @@ namespace MediatrixPruebaTecnica.Gateways.RepositoryEFCore
             this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("MediatrixPruebaTecnica")));
+                options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection")));
             services.AddScoped<IEmpleadoRepository, EmpleadoRepository>();
             services.AddScoped<IRegistroPagoRepository, RegistroPagoRepository>();
             services.AddScoped<IRolRepository, RolRepository>();

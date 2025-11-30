@@ -5,6 +5,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.GetAllByFil
 {
     public interface IGetAllByFilterEmpleadoOutputPort
     {
-        Task<Result<IEnumerable<EmpleadoDto>>> Handle(EmpleadoDto[] dto);
+        Task Handle(EmpleadoDto[] dto);
     }
 }

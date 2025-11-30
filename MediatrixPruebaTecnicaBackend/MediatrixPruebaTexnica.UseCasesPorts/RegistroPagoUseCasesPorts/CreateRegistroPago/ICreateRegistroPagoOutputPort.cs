@@ -5,6 +5,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.CreateR
 {
     public interface ICreateRegistroPagoOutputPort
     {
-        Task<Result<RegistroPagoDto>> Handle(RegistroPagoDto dto);
+        Task Handle(RegistroPagoDto dto);
     }
 }

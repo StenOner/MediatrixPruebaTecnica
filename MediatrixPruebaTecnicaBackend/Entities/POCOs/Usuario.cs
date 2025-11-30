@@ -13,6 +13,6 @@
 
         public DateTime FechaCreacion { get; set; }
         public DateTime? FechaModificacion { get; set; }
-        public DateTime? UltimoAcceso { get; set; }
+        //public DateTime? UltimoAcceso { get; set; }
     }
 }

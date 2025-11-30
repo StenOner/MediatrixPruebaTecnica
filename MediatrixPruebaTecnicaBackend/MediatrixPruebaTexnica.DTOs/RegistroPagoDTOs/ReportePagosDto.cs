@@ -4,7 +4,7 @@
     {
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-        public List<RegistroPagoDto> Pagos { get; set; } = new();
+        public List<RegistroPagoDto> Pagos { get; set; } = [];
         public decimal TotalBruto { get; set; }
         public decimal TotalDeducciones { get; set; }
         public decimal TotalNeto { get; set; }

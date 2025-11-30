@@ -5,6 +5,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.AuthUseCasesPorts.Login
 {
     public interface ILoginOutputPort
     {
-        Task<Result<LoginResponseDto>> Handle(LoginResponseDto dto);
+        Task<Result<LoginResponseDto>> Handle(Result<LoginResponseDto> dto);
     }
 }

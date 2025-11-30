@@ -1,5 +1,6 @@
 ﻿using MediatrixPruebaTexnica.UseCases.AuthUseCases;
 using MediatrixPruebaTexnica.UseCases.EmpleadoUseCases;
+using MediatrixPruebaTexnica.UseCases.RegistroPagoUseCases;
 using MediatrixPruebaTexnica.UseCasesPorts.AuthUseCasesPorts.Login;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.CreateEmpleadoAsalariado;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.CreateEmpleadoAsalariadoPorComision;
@@ -13,6 +14,10 @@ using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoA
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoAsalariadoPorComision;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoPorComision;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoPorHoras;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.CreateRegistroPago;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.DeleteRegistroPago;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.GetReportePago;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.UpdateRegistroPago;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MediatrixPruebaTexnica.UseCases
@@ -35,6 +40,10 @@ namespace MediatrixPruebaTexnica.UseCases
             services.AddTransient<IUpdateEmpleadoAsalariadoPorComisionInputPort, UpdateEmpleadoAsalariadoPorComisionPorComisionInteractor>();
             services.AddTransient<IUpdateEmpleadoPorComisionInputPort, UpdateEmpleadoPorComisionInteractor>();
             services.AddTransient<IUpdateEmpleadoPorHorasInputPort, UpdateEmpleadoPorHorasInteractor>();
+            services.AddTransient<ICreateRegistroPagoInputPort, CreateRegistroPagoInteractor>();
+            services.AddTransient<IDeleteRegistroPagoInputPort, DeleteRegistroPagoInteractor>();
+            services.AddTransient<IGetReportePagoInputPort, GetReportePagoInteractor>();
+            services.AddTransient<IUpdateRegistroPagoInputPort, UpdateRegistroPagoInteractor>();
 
             return services;
         }

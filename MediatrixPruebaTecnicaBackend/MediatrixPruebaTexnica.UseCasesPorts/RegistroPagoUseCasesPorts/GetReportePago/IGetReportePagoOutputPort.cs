@@ -5,6 +5,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.GetRepo
 {
     public interface IGetReportePagoOutputPort
     {
-        Task Handle(ReportePagosDto dto);
+        Task Handle(Result<ReportePagosDto> dto);
     }
 }

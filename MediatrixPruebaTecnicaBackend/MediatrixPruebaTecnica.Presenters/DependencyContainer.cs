@@ -1,5 +1,6 @@
 ﻿using MediatrixPruebaTecnica.Presenters.AuthPresenters;
 using MediatrixPruebaTecnica.Presenters.EmpleadoPresenters;
+using MediatrixPruebaTecnica.Presenters.RegistroPagoPresenters;
 using MediatrixPruebaTexnica.UseCasesPorts.AuthUseCasesPorts.Login;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.CreateEmpleadoAsalariado;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.CreateEmpleadoAsalariadoPorComision;
@@ -13,6 +14,10 @@ using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoA
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoAsalariadoPorComision;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoPorComision;
 using MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.UpdateEmpleadoPorHoras;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.CreateRegistroPago;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.DeleteRegistroPago;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.GetReportePago;
+using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.UpdateRegistroPago;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -36,6 +41,10 @@ namespace MediatrixPruebaTecnica.Presenters
             services.AddScoped<IUpdateEmpleadoAsalariadoPorComisionOutputPort, UpdateEmpleadoAsalariadoPorComisionPresenter>();
             services.AddScoped<IUpdateEmpleadoPorComisionOutputPort, UpdateEmpleadoPorComisionPresenter>();
             services.AddScoped<IUpdateEmpleadoPorHorasOutputPort, UpdateEmpleadoPorHorasPresenter>();
+            services.AddScoped<ICreateRegistroPagoOutputPort, CreateRegistroPagoPresenter>();
+            services.AddScoped<IDeleteRegistroPagoOutputPort, DeleteRegistroPagoPresenter>();
+            services.AddScoped<IGetReportePagoOutputPort, GetReportePagoPresenter>();
+            services.AddScoped<IUpdateRegistroPagoOutputPort, UpdateRegistroPagoPresenter>();
 
             return services;
         }

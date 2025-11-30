@@ -2,6 +2,6 @@
 {
     public interface IGetAllEmpleadoInputPort
     {
-        Task Hanlde();
+        Task Handle();
     }
 }

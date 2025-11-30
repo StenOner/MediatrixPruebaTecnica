@@ -2,6 +2,6 @@
 {
     public interface IGetByIdEmpleadoInputPort
     {
-        Task Hanlde(Guid id);
+        Task Handle(Guid id);
     }
 }

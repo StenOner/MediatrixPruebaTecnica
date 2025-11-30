@@ -6,6 +6,7 @@ using MediatrixPruebaTecnica.Entities.POCOs;
 using MediatrixPruebaTexnica.DTOs.AuthDTOs;
 using MediatrixPruebaTexnica.UseCasesPorts.AuthUseCasesPorts.Login;
 using MediatrixPruebaTexnica.UseCasesPorts.Common;
+using MediatrixPruebaTexnica.UseCases.Utility;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -22,7 +23,7 @@ namespace MediatrixPruebaTexnica.UseCases.AuthUseCases
         {
             var usuario = await _usuarioRepository.GetByNombreUsuarioAsync(dto.NombreUsuario);
 
-            if (usuario == null || !VerifyPassword(dto.Password, usuario.PasswordHash))
+            if (usuario == null || !LoginUtility.VerifyPassword(dto.Password, usuario.PasswordHash))
             {
                 await _outputPort.Handle(
                     Result<LoginResponseDto>.FailureResult("Credenciales inválidas")
@@ -77,16 +78,6 @@ namespace MediatrixPruebaTexnica.UseCases.AuthUseCases
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        private string HashPassword(string password)
-        {
-            return BCrypt.Net.BCrypt.HashPassword(password);
-        }
-
-        private bool VerifyPassword(string password, string hash)
-        {
-            return BCrypt.Net.BCrypt.Verify(password, hash);
         }
     }
 }

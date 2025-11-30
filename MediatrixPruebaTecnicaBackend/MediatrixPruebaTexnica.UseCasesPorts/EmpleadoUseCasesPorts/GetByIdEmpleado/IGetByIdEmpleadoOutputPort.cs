@@ -5,6 +5,6 @@ namespace MediatrixPruebaTexnica.UseCasesPorts.EmpleadoUseCasesPorts.GetByIdEmpl
 {
     public interface IGetByIdEmpleadoOutputPort
     {
-        Task<Result<EmpleadoDto>> Hanlde(EmpleadoDto dto);
+        Task<Result<EmpleadoDto>> Handle(Result<EmpleadoDto> dto);
     }
 }

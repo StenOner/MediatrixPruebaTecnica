@@ -2,10 +2,11 @@
 
 import { ApiResponse } from '@/types/response'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
+import { useRouter } from 'next/navigation'
 import { useCallback, useMemo, useState } from 'react'
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://localhost:5000/api'
-const TOKEN_KEY = 'bearer_token'
+const TOKEN_KEY = process.env.TOKEN_KEY || 'bearer_token'
 
 export function useApi() {
   const [token, setToken] = useState<string | null>(() => {
@@ -15,6 +16,7 @@ export function useApi() {
       return null
     }
   })
+  const router = useRouter()
 
   const axiosInstance: AxiosInstance = useMemo(() => {
     return axios.create({ baseURL: API_BASE_URL })
@@ -68,16 +70,15 @@ export function useApi() {
   const logout = useCallback(() => {
     localStorage.removeItem(TOKEN_KEY)
     setToken(null)
-  }, [])
+    router.push('/auth/login')
+  }, [router])
 
   return {
-    token,
-    instance: axiosInstance,
     get,
     post,
     put,
     patch,
-    delete: del,
+    del,
     login,
     logout,
   }

@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import "./globals.css"
 import MainLayout from '@/components/main-layout'
 import { Activity } from 'react'
+import ToasterProvider from '@/providers/toaster-provider'
 
 export default function RootLayout({
   children,
@@ -16,13 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ToasterProvider />
         <Activity mode={!isAuthRoute ? 'visible' : 'hidden'}>
           <MainLayout>
             {children}
           </MainLayout>
         </Activity>
         <Activity mode={isAuthRoute ? 'visible' : 'hidden'}>
-          <>{children}</>
+          {children}
         </Activity>
       </body>
     </html>

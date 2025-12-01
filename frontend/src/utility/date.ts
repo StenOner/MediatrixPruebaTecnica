@@ -1,0 +1,18 @@
+export class DateUtil {
+  static getFirstDayOfMonth(date?: Date): Date {
+    const d = date ? new Date(date) : new Date()
+    return new Date(d.getFullYear(), d.getMonth(), 1)
+  }
+
+  static getLastDayOfMonth(date?: Date): Date {
+    const d = date ? new Date(date) : new Date()
+    return new Date(d.getFullYear(), d.getMonth() + 1, 0)
+  }
+
+  static formatDateToYYYYMMDD(date: Date): string {
+    const year = date.getFullYear()
+    const month = (date.getMonth() + 1).toString().padStart(2, '0')
+    const day = date.getDate().toString().padStart(2, '0')
+    return `${year}-${month}-${day}`
+  }
+}

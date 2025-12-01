@@ -1,13 +1,15 @@
-import { Home, Users, DollarSign, FileText, LogOut, ChevronLeft, ChevronRight } from 'lucide-react'
+'use client'
+
+import { useApi } from '@/hooks/use-api'
+import { Users, DollarSign, FileText, LogOut, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: boolean, setSidebarOpen?: (open: boolean) => void }) {
+  const { logout } = useApi()
   const menuItems = [
-    { icon: Home, label: 'Dashboard', href: '/' },
-    { icon: Users, label: 'Empleados', href: '/empleados' },
-    { icon: DollarSign, label: 'Pagos', href: '/pagos' },
-    { icon: FileText, label: 'Reportes', href: '/reportes' },
-    // { icon: Settings, label: 'Configuración', href: '/configuracion' },
+    { icon: Users, label: 'Empleados', href: '/employees' },
+    { icon: DollarSign, label: 'Pagos', href: '/payments' },
+    { icon: FileText, label: 'Reportes', href: '/reports' },
   ]
 
   return (
@@ -51,7 +53,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: 
 
       {/* Sidebar Footer */}
       <div className="border-t border-white/10 p-4">
-        <button className="flex items-center gap-3 px-4 py-3 text-gray-200 hover:bg-white/10 rounded-lg transition-all w-full">
+        <button className="flex items-center gap-3 px-4 py-3 text-gray-200 hover:bg-white/10 hover:cursor-pointer rounded-lg transition-all w-full" onClick={logout}>
           <LogOut size={22} className="shrink-0" />
           {sidebarOpen && <span className="font-medium">Cerrar Sesión</span>}
         </button>

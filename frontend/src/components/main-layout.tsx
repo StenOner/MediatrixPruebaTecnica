@@ -1,10 +1,12 @@
 'use client'
+
 import { useState } from 'react'
 import { User } from 'lucide-react'
 import Footer from './footer'
 import Sidebar from './sidebar'
+import withAuth from '@/hocs/withAuth'
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+function MainLayout({ children, username, role }: { children: React.ReactNode, username?: string, role?: string }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -18,8 +20,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">
-            <p className="text-white font-medium">Admin Usuario</p>
-            <p className="text-gray-300 text-sm">admin@payroll.com</p>
+            <p className="text-white font-medium capitalize">{username}</p>
+            <p className="text-gray-300 text-sm lowercase">{role}</p>
           </div>
           <div className="size-10 rounded-full bg-white/20 flex items-center justify-center text-white">
             <User size={20} />
@@ -43,3 +45,5 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     </div>
   )
 }
+
+export default withAuth(MainLayout)

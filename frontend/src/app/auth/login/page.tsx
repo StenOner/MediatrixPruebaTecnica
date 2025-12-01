@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { User, Lock, Eye, EyeOff, LogIn, AlertCircle } from 'lucide-react'
 import Image from 'next/image'
 
-export default function Login() {
+export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
     username: '',
@@ -26,7 +26,7 @@ export default function Login() {
       const response = await login(formData.username, formData.password)
 
       if (response.success) {
-        router.push('/')
+        router.push('/employees')
         return
       }
 
@@ -148,7 +148,7 @@ export default function Login() {
               <button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-transparent rounded-lg shadow-sm text-white font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 border border-transparent rounded-lg shadow-sm text-white font-medium transition-all hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{
                   backgroundColor: loading ? 'rgba(13, 48, 72, 0.6)' : 'rgba(13, 48, 72, 0.9)',
                 }}

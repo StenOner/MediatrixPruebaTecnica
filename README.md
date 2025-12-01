@@ -116,3 +116,50 @@ dotnet run
 ```
 
 También puedes ejecutar el proyecto desde Visual Studio.
+
+---
+
+## Tabla de Contenidos Frontend
+
+- [Requisitos](#requisitos)
+- [Variables de Entorno](#variables-de-entorno)
+- [Instalación Frontend](#instalación-frontend)
+- [Ejecución Frontend](#ejecución-frontend)
+
+---
+
+## Requisitos
+
+- **Node.js 18+**
+- **Next.js 16** (App Router)
+
+---
+
+## Variables de Entorno
+
+Crear un archivo **.env.local** en la raíz del proyecto con:
+
+```
+NEXT_PUBLIC_API_BASE_URL=
+TOKEN_KEY=
+```
+
+---
+
+## Instalación Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+---
+
+## Ejecución Frontend
+
+```bash
+npm run dev
+```
+
+La aplicación se ejecuta en **http://localhost:3000** como cualquier proyecto Next.js.
+

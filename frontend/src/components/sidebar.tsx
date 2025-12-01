@@ -1,4 +1,5 @@
 import { Home, Users, DollarSign, FileText, LogOut, ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: boolean, setSidebarOpen?: (open: boolean) => void }) {
   const menuItems = [
@@ -18,28 +19,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: { sidebarOpen: 
       <div className="h-32 flex items-center justify-center p-4">
         {sidebarOpen ? (
           <div className="w-full">
-            {/* SVG Logo Placeholder - Reemplaza con tu SVG */}
-            <svg
-              viewBox="0 0 200 80"
-              className="w-full h-auto"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Icono de edificio corporativo */}
-              <rect x="70" y="20" width="60" height="50" fill="white" opacity="0.9" />
-              <rect x="75" y="25" width="10" height="10" fill="rgba(13, 48, 72, 0.9)" />
-              <rect x="90" y="25" width="10" height="10" fill="rgba(13, 48, 72, 0.9)" />
-              <rect x="105" y="25" width="10" height="10" fill="rgba(13, 48, 72, 0.9)" />
-              <rect x="75" y="40" width="10" height="10" fill="rgba(13, 48, 72, 0.9)" />
-              <rect x="90" y="40" width="10" height="10" fill="rgba(13, 48, 72, 0.9)" />
-              <rect x="105" y="40" width="10" height="10" fill="rgba(13, 48, 72, 0.9)" />
-              <rect x="85" y="55" width="30" height="15" fill="rgba(13, 48, 72, 0.9)" />
-              <polygon points="100,10 70,20 130,20" fill="white" opacity="0.9" />
-
-              {/* Texto */}
-              <text x="100" y="82" fontFamily="Arial, sans-serif" fontSize="10" fill="white" textAnchor="middle" fontWeight="bold">
-                MI EMPRESA
-              </text>
-            </svg>
+            <Image src="../icons/logo.svg" alt="Logo" width={300} height={300} className="object-contain" />
           </div>
         ) : (
           <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">

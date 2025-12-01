@@ -8,22 +8,20 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col" style={{ background: 'rgba(237, 240, 247)' }}>
       {/* Header */}
       <header
         className={`h-16 flex items-center justify-between px-6 shadow-lg z-20 transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-20'}`}
         style={{ backgroundColor: 'rgba(13, 48, 72, 0.9)' }}
       >
-        <div className="flex items-center gap-4">
-          <h1 className="text-white text-xl font-bold">Sistema de Nómina</h1>
-        </div>
+        <div className='flex'></div>
 
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">
             <p className="text-white font-medium">Admin Usuario</p>
             <p className="text-gray-300 text-sm">admin@payroll.com</p>
           </div>
-          <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white">
+          <div className="size-10 rounded-full bg-white/20 flex items-center justify-center text-white">
             <User size={20} />
           </div>
         </div>
@@ -41,7 +39,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         </main>
       </div>
 
-      <Footer />
+      <Footer sidebarOpen={sidebarOpen} />
     </div>
   )
 }

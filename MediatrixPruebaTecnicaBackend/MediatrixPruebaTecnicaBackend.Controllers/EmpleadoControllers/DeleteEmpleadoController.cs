@@ -7,7 +7,7 @@ namespace MediatrixPruebaTecnica.Controllers.EmpleadoControllers
 {
     [Route("api/empleados")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class DeleteEmpleadoController : ControllerBase
     {
         private readonly ILogger<DeleteEmpleadoController> _logger;

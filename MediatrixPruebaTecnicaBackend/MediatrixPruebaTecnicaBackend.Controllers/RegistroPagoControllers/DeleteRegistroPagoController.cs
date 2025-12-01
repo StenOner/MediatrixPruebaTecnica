@@ -7,7 +7,7 @@ namespace MediatrixPruebaTecnica.Controllers.RegistroPagoControllers
 {
     [Route("api/pagos")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class DeleteRegistroPagoController : ControllerBase
     {
         private readonly ILogger<DeleteRegistroPagoController> _logger;

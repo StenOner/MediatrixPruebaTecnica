@@ -11,7 +11,7 @@ namespace MediatrixPruebaTexnica.UseCases.Utility
             {
                 Id = registroPago.Id,
                 EmpleadoId = registroPago.EmpleadoId,
-                NombreEmpleado = $"{registroPago.Empleado.PrimerNombre} {registroPago.Empleado.ApellidoPaterno}",
+                NombreEmpleado = $"{registroPago.Empleado?.PrimerNombre} {registroPago.Empleado?.ApellidoPaterno}",
                 FechaPago = registroPago.FechaPago,
                 PeriodoInicio = registroPago.PeriodoInicio,
                 PeriodoFin = registroPago.PeriodoFin,

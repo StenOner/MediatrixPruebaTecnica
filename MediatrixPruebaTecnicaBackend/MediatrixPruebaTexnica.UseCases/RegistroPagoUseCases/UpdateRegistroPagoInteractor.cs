@@ -6,10 +6,11 @@ using MediatrixPruebaTexnica.UseCasesPorts.RegistroPagoUseCasesPorts.UpdateRegis
 
 namespace MediatrixPruebaTexnica.UseCases.RegistroPagoUseCases
 {
-    public class UpdateRegistroPagoInteractor(IRegistroPagoRepository registroPagoRepository, IUpdateRegistroPagoOutputPort outputPort, IUnitOfWork unitOfWork)
+    public class UpdateRegistroPagoInteractor(IRegistroPagoRepository registroPagoRepository, IEmpleadoRepository empleadoRepository, IUpdateRegistroPagoOutputPort outputPort, IUnitOfWork unitOfWork)
         : IUpdateRegistroPagoInputPort
     {
         private readonly IRegistroPagoRepository _registroPagoRepository = registroPagoRepository;
+        private readonly IEmpleadoRepository _empleadoRepository = empleadoRepository;
         private readonly IUpdateRegistroPagoOutputPort _outputPort = outputPort;
         private readonly IUnitOfWork _unitOfWork = unitOfWork;
 
@@ -26,7 +27,18 @@ namespace MediatrixPruebaTexnica.UseCases.RegistroPagoUseCases
                 return;
             }
 
-            registro.MontoBruto = registro.Empleado.CalcularPagoSemanal();
+            var empleado = await _empleadoRepository.GetByIdAsync(registro.EmpleadoId);
+
+            if (empleado == null)
+            {
+                await _outputPort.Handle(
+                    Result<RegistroPagoDto>.FailureResult("Registro corrupto")
+                    );
+
+                return;
+            }
+
+            registro.MontoBruto = empleado.CalcularPagoSemanal();
             registro.Deducciones = dto.Deducciones;
             registro.MontoNeto = registro.MontoBruto - registro.Deducciones;
             registro.Observaciones = dto.Observaciones;

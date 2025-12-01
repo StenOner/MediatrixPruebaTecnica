@@ -1,6 +1,6 @@
 'use client'
 
-import EmployeeForm from '@/components/employee/employee-form'
+import EmployeeForm from '@/components/employees/employee-form'
 import { useApi } from '@/hooks/use-api'
 import type { EmployeeFormType, UpdateEmpleadoAsalariadoDto, UpdateEmpleadoAsalariadoPorComisionDto, UpdateEmpleadoPorComisionDto, UpdateEmpleadoPorHorasDto } from '@/types/employee'
 import { useParams, useRouter } from 'next/navigation'

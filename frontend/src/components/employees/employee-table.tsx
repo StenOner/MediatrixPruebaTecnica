@@ -4,6 +4,7 @@ import { EmployeeDto } from '@/types/employee'
 import { useApi } from '@/hooks/use-api'
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
+import { CurrencyUtil } from '@/utility/currency'
 
 type SortField = keyof EmployeeDto
 type SortDirection = 'asc' | 'desc'
@@ -81,13 +82,6 @@ export default function EmployeeTable({ employees, setEmployees }: { employees: 
     setDepartamentoFilter('')
     setTipoEmployeeFilter('')
     setEstadoFilter('all')
-  }
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-US', {
-      style: 'currency',
-      currency: 'USD'
-    }).format(amount)
   }
 
   const getTipoEmployeeBadge = (tipo: string) => {
@@ -168,7 +162,7 @@ export default function EmployeeTable({ employees, setEmployees }: { employees: 
               <div>
                 <p className='text-gray-600 text-sm'>Nómina Total</p>
                 <p className='text-2xl font-bold text-gray-800'>
-                  {formatCurrency(employees.reduce((sum, e) => sum + e.pagoSemanal, 0))}
+                  {CurrencyUtil.formatCurrency(employees.reduce((sum, e) => sum + e.pagoSemanal, 0))}
                 </p>
               </div>
               <DollarSign className='text-yellow-500' size={32} />
@@ -353,7 +347,7 @@ export default function EmployeeTable({ employees, setEmployees }: { employees: 
                     <td colSpan={7} className='px-6 py-12 text-center text-gray-500'>
                       <div className='flex flex-col items-center gap-2'>
                         <Search size={48} className='text-gray-300' />
-                        <p className='text-lg font-medium'>No se encontraron employees</p>
+                        <p className='text-lg font-medium'>No se encontraron empleados</p>
                         <p className='text-sm'>Intenta ajustar los filtros de búsqueda</p>
                       </div>
                     </td>
@@ -380,7 +374,7 @@ export default function EmployeeTable({ employees, setEmployees }: { employees: 
                         </span>
                       </td>
                       <td className='px-6 py-4 text-sm font-semibold text-gray-900'>
-                        {formatCurrency(employee.pagoSemanal)}
+                        {CurrencyUtil.formatCurrency(employee.pagoSemanal)}
                       </td>
                       <td className='px-6 py-4'>
                         <span className={`px-3 py-1 rounded-full text-xs font-medium ${employee.activo
@@ -392,13 +386,6 @@ export default function EmployeeTable({ employees, setEmployees }: { employees: 
                       </td>
                       <td className='px-6 py-4'>
                         <div className='flex items-center justify-end gap-2'>
-                          {/* <button
-                            className='p-2 text-blue-600 hover:bg-blue-50 hover:cursor-pointer rounded-lg transition-colors'
-                            title='Ver detalles'
-                            onClick={() => handleGetById(employee.id)}
-                          >
-                            <Eye size={18} />
-                          </button> */}
                           <button
                             className='p-2 text-green-600 hover:bg-green-50 hover:cursor-pointer rounded-lg transition-colors'
                             title='Editar'

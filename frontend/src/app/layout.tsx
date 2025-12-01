@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import "./globals.css"
-import MainLayout from '@/components/main-layout'
+import MainLayout from '@/components/ui/main-layout'
 import { Activity } from 'react'
 import ToasterProvider from '@/providers/toaster-provider'
 

@@ -5,9 +5,15 @@ import { User } from 'lucide-react'
 import Footer from './footer'
 import Sidebar from './sidebar'
 import withAuth from '@/hocs/withAuth'
+import { usePathname } from 'next/navigation'
 
 function MainLayout({ children, username, role }: { children: React.ReactNode, username?: string, role?: string }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const pathname = usePathname() ?? ''
+  const title = pathname.includes('employees') ? 'Empleados'
+    : pathname.includes('payments') ? 'Pagos'
+      : pathname.includes('reports') ? 'Reportes'
+        : ''
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'rgba(237, 240, 247)' }}>
@@ -16,7 +22,9 @@ function MainLayout({ children, username, role }: { children: React.ReactNode, u
         className={`h-16 flex items-center justify-between px-6 shadow-lg z-20 transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-20'}`}
         style={{ backgroundColor: 'rgba(13, 48, 72, 0.9)' }}
       >
-        <div className='flex'></div>
+        <div className='flex text-2xl font-medium text-white'>
+          <span>{title}</span>
+        </div>
 
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">

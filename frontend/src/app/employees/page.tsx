@@ -3,7 +3,7 @@
 import { useApi } from '@/hooks/use-api'
 import { Activity, useEffect, useState } from 'react'
 import type { EmployeeDto } from '@/types/employee'
-import EmployeeTable from '@/components/employee/employee-table'
+import EmployeeTable from '@/components/employees/employee-table'
 
 export default function EmployeesPage() {
   const { get } = useApi()

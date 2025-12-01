@@ -44,7 +44,9 @@ namespace MediatrixPruebaTecnica.Gateways.RepositoryEFCore.DataContext
 
                 if (entry.State == EntityState.Modified)
                 {
-                    if (entry.Property("FechaModificacion") != null)
+                    var propertyNames = entry.Properties.Select(p => p.Metadata.Name).ToList();
+
+                    if (propertyNames.Contains("FechaModificacion"))
                         entry.Property("FechaModificacion").CurrentValue = DateTime.UtcNow;
                 }
             }

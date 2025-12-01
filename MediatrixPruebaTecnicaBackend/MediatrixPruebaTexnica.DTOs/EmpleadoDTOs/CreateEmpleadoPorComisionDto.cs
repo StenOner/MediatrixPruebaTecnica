@@ -1,0 +1,12 @@
+﻿namespace MediatrixPruebaTexnica.DTOs.EmpleadoDTOs
+{
+    public class CreateEmpleadoPorComisionDto
+    {
+        public string PrimerNombre { get; set; } = string.Empty;
+        public string ApellidoPaterno { get; set; } = string.Empty;
+        public string NumeroSeguroSocial { get; set; } = string.Empty;
+        public string Departamento { get; set; } = string.Empty;
+        public decimal VentasBrutas { get; set; }
+        public decimal TarifaComision { get; set; }
+    }
+}

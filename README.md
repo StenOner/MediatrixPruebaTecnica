@@ -131,7 +131,7 @@ También puedes ejecutar el proyecto desde Visual Studio.
 ## Requisitos
 
 - **Node.js 18+**
-- **Next.js 16** (App Router)
+- **Next.js 16**
 
 ---
 
@@ -163,3 +163,30 @@ npm run dev
 
 La aplicación se ejecuta en **http://localhost:3000** como cualquier proyecto Next.js.
 
+---
+
+## Preguntas y Respuestas Técnicas
+
+1. **¿Cómo aplicarías Clean Architecture en un proyecto .NET?**  
+   Organizando el código en capas independientes (Domain, Application, Adapters, API), asegurando que el dominio no dependa de frameworks. Se usan interfaces para desacoplar lógica de negocio y persistencia, y se aplican inyecciones de dependencias para mantener un flujo limpio y testeable.
+
+2. **¿Cómo garantizarías la seguridad en una API REST que maneja datos sensibles?**  
+   Implementando autenticación JWT, validación estricta de entradas, HTTPS obligatorio, protección contra ataques comunes (SQL Injection) y políticas de autorización por roles. También cifrado de datos sensibles y uso de secrets en variables de entorno.
+
+3. **¿Cuándo usarías microservicios y cuándo un monolito?**  
+   Microservicios cuando existen dominios bien delimitados, alta escalabilidad y equipos distribuidos. Monolito cuando el proyecto es pequeño o mediano, con lógica poco acoplada y necesidad de rapidez en desarrollo y despliegue.
+
+4. **¿Qué diferencia hay entre Entity Framework y Dapper y cuándo usarías cada uno?**  
+   EF es un ORM completo que simplifica el mapeo y facilita desarrollo rápido; Dapper es un micro ORM más veloz y controlable. Usaría EF para CRUDs estándar y Dapper para consultas de alto rendimiento o reportes.
+
+5. **¿Cómo has trabajado en proyectos con equipos ágiles y qué herramientas has usado?**  
+   Utilizando Scrum, con dailies, sprints y retrospectivas. Herramientas como Azure DevOps, Jira, GitHub Projects y pipelines CI/CD para integraciones continuas, control de versiones y despliegues.
+
+6. **¿Cómo garantizas que el código de la aplicación puede ser probado?**  
+   Aplicando principios SOLID, inyección de dependencias, separación de responsabilidades y capas bien definidas. Uso de interfaces, mocks y pruebas unitarias en servicios y casos de uso.
+
+7. **¿Cómo evitarías la saturación de una API?**  
+   Implementando rate limiting, paginación, colas (RabbitMQ/Azure Service Bus), compresión de respuestas y escalado automático. También optimización de consultas a la base de datos.
+
+8. **¿Cómo deben comunicarse los componentes en una arquitectura basada en componentes?**  
+   A través de interfaces bien definidas, eventos o props (en frontend), evitando acoplamiento directo. La comunicación debe seguir contratos claros y ser predecible, permitiendo reemplazar o actualizar componentes sin romper el sistema.
